@@ -1,5 +1,4 @@
 Given I am on the homepage
-When my location is (lat,long)
 And I click on "add"
 Then I should be on addPage
 
