@@ -1,0 +1,17 @@
+/ -# in app/views/emergencies/add.html.haml
+/ %h1 Edit Movie
+
+/ = form_tag movie_path(@movie), :method => :post do
+
+/   = label :emergency, :type, 'Type'
+/   -# select :movie, :rating, ['G','PG','PG-13','R','NC-17']
+/   -#= text_field :movie, 'title'
+
+/   = label :emergency, :amount_needed, 'Amount Needed(PKR)'
+/   = text_field :emergency, '0.0'
+/   = label :emergency, :lat, 'Latitude'
+/   = label :emergency, :long, 'Longitude'
+
+/   = date_select :movie, :release_date
+
+/   = submit_tag 'Add Emergency'
