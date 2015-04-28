@@ -1,0 +1,18 @@
+-# in app/views/emergencies/add.html.haml
+%h1 Add New Emergency
+
+= form_tag emergencies_path do
+
+  = label :emergency, :type, 'Type'
+  = text_field :emergency, 'type'
+
+  = label :emergency, :amount_needed, 'Amount Needed (PKR)'
+  = text_field :emergency, '0.0'
+  / = label :emergency, :lat, 'Latitude' 
+  / = text_field :emergency, :lat, @location.latitude
+  / = label :emergency, :long, 'Longitude'
+  / = text_field :emergency, :long, @location.longitude
+  / = label :emergency, :start_time, 'Emergency Date'
+  / = text_field :emergency, :start_time, @current_date
+
+  = submit_tag 'Add Emergency'

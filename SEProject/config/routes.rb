@@ -12,7 +12,8 @@ SEProject::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
+  # get 'emergency/new', to: 'emergency#new', as: 'new_emergency'
+  resources :emergencies
   # Sample resource route with options:
   #   resources :products do
   #     member do
