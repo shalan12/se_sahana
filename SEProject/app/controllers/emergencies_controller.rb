@@ -1,10 +1,10 @@
+require 'date'
 class EmergenciesController < ApplicationController
 
 	def new
-		@current_time = Time.now
+		@current_time = Time.now.strftime("%d/%m/%Y %H:%M")
 		env['HTTP_X_REAL_IP'] = '1.2.3.4' if Rails.env.development?
 		@location = request.location
-		puts '#{@location}'
 	end
 
 	def create
