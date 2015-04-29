@@ -1,8 +1,8 @@
 class CreateEmergencies < ActiveRecord::Migration
   def up
   	create_table :emergencies do |e|
-  		e.float 'amount_needed' 
-  		e.string 'type'
+  		e.float 'amount_needed'
+  		e.string 'emergency_type'
   		e.float 'lat'
   		e.float 'long'
   		e.datetime 'start_time'

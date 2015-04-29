@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20150428103604) do
 
   create_table "emergencies", :force => true do |t|
     t.float    "amount_needed"
-    t.string   "type"
+    t.string   "emergency_type"
     t.float    "lat"
     t.float    "long"
     t.datetime "start_time"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 20150428103604) do
   create_table "users", :force => true do |t|
     t.string "username"
     t.string "password"
-    t.string "type"
+    t.string "user_type"
   end
 
 end
