@@ -7,12 +7,11 @@
   = text_field :emergency, 'type'
 
   = label :emergency, :amount_needed, 'Amount Needed (PKR)'
-  = text_field :emergency, '0.0'
-  / = label :emergency, :lat, 'Latitude' 
-  / = text_field :emergency, :lat, @location.latitude
-  / = label :emergency, :long, 'Longitude'
-  / = text_field :emergency, :long, @location.longitude
-  / = label :emergency, :start_time, 'Emergency Date'
-  / = text_field :emergency, :start_time, @current_date
-
+  = number_field :emergency, :amount_needed, :value => 0.0
+  = label :emergency, :lat, 'Latitude : ' 
+  = number_field :emergency, :lat, :value => @location.latitude, :readonly => true
+  = label :emergency, :long, 'Longitude : '
+  = number_field :emergency, :long, :value => @location.longitude, :readonly => true
+  = label :emergency, :start_time, 'Emergency Date : '
+  = text_field :emergency, :start_time, :value => @current_time, :readonly =>true
   = submit_tag 'Add Emergency'
