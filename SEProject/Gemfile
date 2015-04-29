@@ -22,7 +22,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem 'bower-rails'
+# gem 'jquery-rails' # not needed all assets in bower
 
 group :development, :test do
   gem 'rspec-rails',      ">= 2.0.0.beta"
