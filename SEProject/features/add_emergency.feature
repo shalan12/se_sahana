@@ -12,9 +12,10 @@ Scenario: navigating to add page
 	Then I should be on the new_emergency page
 
 Scenario: emergency should be geotagged with my location
-	Given I am on the new_emergency page
-	When My location is '1234'
-	Then I should see "Latitude.*47.945"
+	Given My location is "1.2.3.4"
+	When I am on the new_emergency page
+	Then the "Latitude" field should contain "47.945"
+	And the "Longitude" field should contain "-122.305"
 
 Scenario: Adding a new emergency
 	Given I am on the new_emergency page

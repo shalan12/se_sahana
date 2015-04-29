@@ -3,8 +3,7 @@ class EmergenciesController < ApplicationController
 
 	def new
 		@current_time = Time.now.strftime("%d/%m/%Y %H:%M")
-		env['HTTP_X_REAL_IP'] = '1234' if Rails.env.development?
-		@location = request.location
+		location
 	end
 
 	def create

@@ -6,6 +6,6 @@ Given (/^I am logged in as a (.*)$/) do |type|
 	click_button ('Log in')
 end
 
-When (/^My location is (.*)$/) do |ip|
-	env['HTTP_X_REAL_IP'] = ip
+Given /^My location is "([^\"].*)"$/ do |loc|
+	ENV['RAILS_TEST_IP_ADDRESS'] = loc
 end 

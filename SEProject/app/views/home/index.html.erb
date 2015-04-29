@@ -1,8 +1,2 @@
 <% provide(:title, "Welcome") %>
 <%= link_to 'Add Emergency', new_emergency_path, {:class => 'col-md-12 btn btn-success' }%>
-<div class="container">
-    <% if flash[:notice] -%>
-        <p class='notice'><%=h flash[:notice] %></p>
-    <% end -%>
-	<%= yield %>
-</div>
