@@ -1,10 +1,10 @@
 -# in app/views/emergencies/add.html.haml
 %h1 Add New Emergency
 
-= form_tag emergencies_path do
+= form_tag home_path do
 
-  = label :emergency, :type, 'Type'
-  = text_field :emergency, 'type'
+  = label :emergency, :emergency_type, 'Type'
+  = text_field :emergency, :emergency_type
 
   = label :emergency, :amount_needed, 'Amount Needed (PKR)'
   = number_field :emergency, :amount_needed, :value => 0.0
@@ -14,4 +14,5 @@
   = number_field :emergency, :long, :value => @location.longitude, :readonly => true
   = label :emergency, :start_time, 'Emergency Date : '
   = text_field :emergency, :start_time, :value => @current_time, :readonly =>true
+  = hidden_field :emergency, :end_time, :value => '2020-10-10' 
   = submit_tag 'Add Emergency'
