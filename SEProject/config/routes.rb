@@ -20,6 +20,9 @@ SEProject::Application.routes.draw do
   #   resources :products
   # get 'emergency/new', to: 'emergency#new', as: 'new_emergency'
   resources :emergencies
+  get 'emergency/:id/donors' => 'inference#emergency_donors', :as => :emergency_donors
+  get 'donors' => 'inference#donors', :as => :donors
+  get 'donors/:id' => 'inference#donor_emergencies', :as => :donor_emergencies
   # Sample resource route with options:
   #   resources :products do
   #     member do
