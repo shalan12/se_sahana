@@ -159,12 +159,8 @@ DEPENDENCIES
   cucumber-rails
   cucumber-rails-training-wheels
   database_cleaner
-<<<<<<< HEAD
-  jquery-rails
-=======
   geocoder
   haml (>= 3.0.25)
->>>>>>> addingEmergency
   rails (= 3.2.18)
   rspec-rails (>= 2.0.0.beta)
   sass-rails (~> 3.2.3)
