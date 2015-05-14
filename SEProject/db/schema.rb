@@ -11,6 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20150429195540) do
+
+  create_table "donations", :force => true do |t|
+    t.integer "emergency_id"
+    t.integer "user_id"
+    t.float   "amount_donated"
+  end
+
+  create_table "emergencies", :force => true do |t|
+    t.float    "amount_needed"
+    t.string   "emergency_type"
+    t.float    "lat"
+    t.float    "long"
+    t.datetime "start_time"
+    t.datetime "end_time"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string "username"
+    t.string "password"
+    t.string "user_type"
+  end
 
 end
