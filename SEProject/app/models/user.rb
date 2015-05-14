@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
   def authenticate(pass)
   	password == pass
   end
+
+  def getUsersByType(type)
+  	User.find(:all).where('user_type = ?', type)
+  end
 end
