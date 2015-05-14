@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   	password == pass
   end
 
-  def getUsersByType(type)
-  	User.find(:all).where('user_type = ?', type)
+  def self.getUsersByType(type)
+  	User.where('user_type = ?', type)
   end
 end

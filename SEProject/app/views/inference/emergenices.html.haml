@@ -1,0 +1,15 @@
+%table
+  %tbody
+    %tr
+      %td= 'id'
+      %td= 'type'
+      %td= 'amount needed'
+      %td= 'start time'
+      %td= 'end time'
+    - @emergencies.each do |emergency|
+      %tr
+        %td= "Emergency #{emergency.id}"
+        %td= emergency.emergency_type
+        %td= emergency.amount_needed
+        %td= emergency.start_time
+        %td= emergency.end_time
