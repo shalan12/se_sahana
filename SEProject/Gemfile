@@ -12,6 +12,8 @@ gem "cucumber-rails-training-wheels", :group => :test
 gem 'simplecov', :require => false, :group => :test
 gem 'geocoder'
 gem 'database_cleaner'
+gem 'faker'
+gem 'fabrication'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -45,5 +47,3 @@ end
 
 # To use debugger
 # gem 'debugger'
-
-

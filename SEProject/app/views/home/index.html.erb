@@ -3,6 +3,6 @@
 
 <%= form_tag({}, {:method => :get}) do %>
   <%= label_tag 'Options for sorting: ' %>
-  <%= select_tag :sort_by, options_for_select(['Amount needed', 'Number of Emergencies']), :onchange => "this.form.submit();" %>
+  <%= select_tag :sort_by, options_for_select(['Amount needed', 'Number of Emergencies']) %>
   <%= submit_tag 'Sort By' %> 
 <% end %>

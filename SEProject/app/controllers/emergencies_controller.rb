@@ -2,7 +2,9 @@ require 'date'
 class EmergenciesController < ApplicationController
 
 	def index
-		
+		#sort = params[:sort_by]
+
+
 	end
 	def new
 		@current_time = Time.now.strftime("%d/%m/%Y %H:%M")
@@ -16,8 +18,9 @@ class EmergenciesController < ApplicationController
 	end
 
 	def show
-		#id = params[:id]
-		#@emergency = Emergency.find(id)
+		id = params[:id]
+		@emergency = Emergency.find(id)
+		#redirect_to emergency_path(@emergency)
 	end
 
 end

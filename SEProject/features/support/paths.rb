@@ -19,6 +19,8 @@ module NavigationHelpers
       '/login'
     when /^the new_emergency\s?page$/
       '/emergencies/new'
+    when /^the details page for emergency "(.*)"$/
+      emergency_path(Emergency.find($1))
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

@@ -7,8 +7,8 @@ Background:
 Given I am logged in as a donor
 
 Scenario: navigating to pledge money to an emergency
-Given I am on the informationPage
-When I click on "pledge"
+Given I am on the details page for emergency 52
+When I press "Pledge"
 Then I should be on the pledgePage
 
 Scenario: pledge money to an emergency
