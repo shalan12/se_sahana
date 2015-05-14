@@ -1,6 +1,9 @@
 require 'date'
 class EmergenciesController < ApplicationController
 
+	def index
+		
+	end
 	def new
 		@current_time = Time.now.strftime("%d/%m/%Y %H:%M")
 		location

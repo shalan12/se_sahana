@@ -1,21 +1,21 @@
-/ -# in app/views/movies/show.html.haml
+-# in app/views/movies/show.html.haml
 
-/ %h2 Details about Emergency
+%h2 Details about Emergency
 
-/ %ul#details
-/   %li
-/   	Emergency Location:
-/   	= @emergency.location
-/   %li
-/     Emergency Type:
-/     = @emergency.type
-/   %li
-/     Added on:
-/     = @emergency.start_time
-/   %li
-/   	Amount needed:
-/   	= @emergency.amount_needed
+%ul#details
+  %li
+  	Emergency Location:
+  	= @emergency.location
+  %li
+    Emergency Type:
+    = @emergency.type
+  %li
+    Added on:
+    = @emergency.start_time
+  %li
+  	Amount needed:
+  	= @emergency.amount_needed
 
-/ = link_to 'Edit', edit_emergecny_path(@emergency)
-/ = button_to 'Delete', emergencies_path(@emergency), :method => :delete, :confirm => 'Are you sure?'
-/ = link_to 'Back to Home Page', emergencies_path
+= link_to 'Edit', edit_emergecny_path(@emergency)
+= button_to 'Delete', emergencies_path(@emergency), :method => :delete, :confirm => 'Are you sure?'
+= link_to 'Back to Home Page', emergencies_path
