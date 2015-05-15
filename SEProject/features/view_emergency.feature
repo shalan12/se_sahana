@@ -1,7 +1,7 @@
 Feature: donor can view the emergencies in areas sorted by amount needed or number of emergencies
 	As a donor
 	So that I can make better decisions about my contributions
-	I want to see affected regions color coded by either number of 		emergencies or amount of money needed.
+	I want to see affected regions color coded by either number of emergencies or amount of money needed.
 
 Background: 
 Given I am logged in as a donor

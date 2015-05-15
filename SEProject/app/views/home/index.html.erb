@@ -1,6 +1,2 @@
 <% provide(:title, "Welcome") %>
-<% if current_user && current_user.user_type == 'field-worker' %>
-	<%= link_to 'Add Emergency', new_emergency_path, {:class => 'col-md-12 btn btn-success' }%>
-<% else %>
-	<h3 class="text-center">You have no business here -_-</h3>
-<% end %>
+<%= link_to 'Add Emergency', new_emergency_path, {:class => 'col-md-12 btn btn-success' }%>
