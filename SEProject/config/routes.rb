@@ -1,4 +1,10 @@
 SEProject::Application.routes.draw do
+  root :to => 'home#index', :as => 'home'
+
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  get    'logout'  => 'sessions#destroy'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -12,7 +18,8 @@ SEProject::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
+  # get 'emergency/new', to: 'emergency#new', as: 'new_emergency'
+  resources :emergencies
   # Sample resource route with options:
   #   resources :products do
   #     member do
