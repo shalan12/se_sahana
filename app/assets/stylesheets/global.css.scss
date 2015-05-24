@@ -34,3 +34,22 @@ nav.navbar {
 	width: 100%;
 	height: $height_hero-btn;
 }
+
+.back-link {
+	position: relative;
+	top: 10px;
+}
+
+.alerts-container {
+	position: fixed;
+	width: 100%;
+	z-index: 9;
+	bottom: 0;
+}
+
+.alert {
+	margin-bottom: 0;
+	.close {
+		font-size: 28px;
+	}
+}

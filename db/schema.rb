@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150428103604) do
+ActiveRecord::Schema.define(:version => 20150429195540) do
 
   create_table "donations", :force => true do |t|
     t.integer "emergency_id"

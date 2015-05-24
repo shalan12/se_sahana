@@ -4,10 +4,12 @@ $color-border-map-input: #057FA3;
 
 .map-holder {
 	height: 100%;
+	padding: 0;
 }
 
 .map-canvas {
 	position: relative;
+	width: 100%;
 	height: 100%;
 }
 
@@ -21,7 +23,9 @@ $color-border-map-input: #057FA3;
 
 	border-left: $size-border-map-input solid $color-border-map-input;
 	padding-left: $size-border_map-input;
+	width: 80%;
+}
 
-	min-width: 400px;
-	width: 40%;
+.controls-holder {
+	padding-top: 1.0em;
 }

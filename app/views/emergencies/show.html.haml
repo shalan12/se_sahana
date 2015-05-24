@@ -1,21 +1,32 @@
-/ -# in app/views/movies/show.html.haml
+-# in app/views/movies/show.html.haml
 
-/ %h2 Details about Emergency
+.col-md-12
+  .page-header
+    %h2 Details about Emergency
 
-/ %ul#details
-/   %li
-/   	Emergency Location:
-/   	= @emergency.location
-/   %li
-/     Emergency Type:
-/     = @emergency.type
-/   %li
-/     Added on:
-/     = @emergency.start_time
-/   %li
-/   	Amount needed:
-/   	= @emergency.amount_needed
+  %ul#details.list-group
+    %li.list-group-item
+      Emergency Location-latitude:
+      = @emergency.lat
+    %li.list-group-item
+      Emergency Location-longitude:
+      = @emergency.long
+    %li.list-group-item
+      Emergency Type:
+      = @emergency.emergency_type
+    %li.list-group-item
+      Added on:
+      = @emergency.start_time
+    %li.list-group-item
+      Amount needed:
+      = @emergency.amount_needed
 
-/ = link_to 'Edit', edit_emergecny_path(@emergency)
-/ = button_to 'Delete', emergencies_path(@emergency), :method => :delete, :confirm => 'Are you sure?'
-/ = link_to 'Back to Home Page', emergencies_path
+  -if @user.user_type == 'NGO-worker'
+    = button_to 'See Donors', emergency_donors_path(@emergency.id), :method => :get, :class => 'btn btn-default'
+  -elsif @user.user_type == 'donor'
+    = button_to 'Pledge', new_pledge_path(@emergency.id), :method => :get, :class => 'btn btn-default'
+  //= link_to 'Edit', edit_emergecny_path(@emergency)
+  //= button_to 'Pledge', pledge_path
+  = button_to 'Delete', emergencies_path(@emergency), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger'
+
+  = link_to 'Back to Home Page', home_path, :class => 'back-link'

@@ -1,17 +1,32 @@
 -# in app/views/emergencies/add.html.haml
-%h1 Add New Emergency
 
-= form_tag emergencies_path do
+.col-md-12
+	.page-header
+		%h1 Add New Emergency
 
-  = label :emergency, :type, 'Type'
-  = text_field :emergency, 'type'
+	= form_tag emergencies_path do
+		.form-group
+			= label :emergency, :emergency_type, 'Type'
+			= text_field :emergency, :emergency_type, :class => 'form-control'
 
-  = label :emergency, :amount_needed, 'Amount Needed (PKR)'
-  = number_field :emergency, :amount_needed, :value => 0.0
-  = label :emergency, :lat, 'Latitude : ' 
-  = number_field :emergency, :lat, :value => @location.latitude, :readonly => true
-  = label :emergency, :long, 'Longitude : '
-  = number_field :emergency, :long, :value => @location.longitude, :readonly => true
-  = label :emergency, :start_time, 'Emergency Date : '
-  = text_field :emergency, :start_time, :value => @current_time, :readonly =>true
-  = submit_tag 'Add Emergency'
+		.form-group
+			= label :emergency, :amount_needed, 'Amount Needed (PKR)'
+			= number_field :emergency, :amount_needed, :value => 12, :class => 'form-control'
+
+		.form-group
+			= label :emergency, :lat, 'Latitude'
+			= number_field :emergency, :lat, :value => @location.latitude, :readonly => true, :class => 'form-control'
+
+		.form-group
+			= label :emergency, :long, 'Longitude'
+			= number_field :emergency, :long, :value => @location.longitude, :readonly => true, :class => 'form-control'
+
+		.form-group
+			= label :emergency, :start_time, 'Emergency Date'
+			= text_field :emergency, :start_time, :value => @current_time, :readonly =>true, :class => 'form-control'
+
+		= submit_tag 'Add Emergency', :class => 'btn btn-success'
+
+		= hidden_field :emergency, :end_time, :value => '2020-10-10'
+
+	= link_to 'Back to Home Page', home_path, :class => 'back-link'

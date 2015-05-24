@@ -3,15 +3,19 @@
 	var $mapInput = $('[name="map-input"]');
 	var map, searchMarkers = [], emergencyMarkers = [];
 	var currentLocation, curMarker;
+
 	var emergenciesRoute = '/emergencies';
+
+	var $latField = $('[name="emergency[lat]"]');
+	var $longField = $('[name="emergency[long]"]');
 
 	var emergencySymbol = {
 	    path: 'M 50 -119.876 -50 -119.876 -50 -19.876 -13.232 -19.876 0.199 0 13.63 -19.876 50 -19.876 Z',
 	    fillColor: '#a20000',
 	    fillOpacity: 1,
-	    strokeColor: '#a20000',
+	    strokeColor: '#ffffff',
 	    strokeWeight: 2,
-	    strokeOpacity: 0.4,
+	    strokeOpacity: 0.8,
 	    scale: 0.2
 	};
 
@@ -19,15 +23,18 @@
 	    path: 'M0-165c-27.618 0-50 21.966-50 49.054C-50-88.849 0 0 0 0s50-88.849 50-115.946C50-143.034 27.605-165 0-165z',
 	    fillColor: '#0AA64D',
 	    fillOpacity: 1,
-	    strokeColor: '#0AA64D',
+	    strokeColor: '#ffffff',
 	    strokeWeight: 2,
-	    strokeOpacity: 0.4,
+	    strokeOpacity: 0.8,
 	    scale: 0.2
 	};
 
-	initMap($mapCanvas.get(0),$mapInput.get(0));
 	Utils.beginRecievingLocation(500, onLocationReceived);
-	getEmergencies();
+
+	if($mapCanvas.length && $mapInput.length) {
+		initMap($mapCanvas.get(0),$mapInput.get(0));
+		getEmergencies();
+	}
 
 	function update() {
 		if(map) {
@@ -58,6 +65,16 @@
 		})
 	}
 
+	function updateFormFieldIfAny() {
+		if(currentLocation && $latField.length && $longField.length) {
+			console.log('updating fields');
+			$latField.val(currentLocation[0]);
+			$longField.val(currentLocation[1]);
+		} else {
+			console.log('not here');
+		}
+	}
+
 	function onLocationReceived(location) {
 		var isFirst = currentLocation ? false : true;
 		currentLocation = [location.coords.latitude, location.coords.longitude];
@@ -76,6 +93,7 @@
 			}
 		}
 		update();
+		updateFormFieldIfAny();
 	}
 
 	function initMap(mapCanvas, mapInput) {

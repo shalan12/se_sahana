@@ -1,0 +1,16 @@
+%h1 Pledge Money
+
+= form_tag pledge_path do
+
+  = label :donation, :emergency_id, 'ID'
+  = text_field :donation, :emergency_id, :value => @emergency.id, :readonly => true
+
+  = label :emergency, :emergency_type, 'Type'
+  = text_field :emergency, :emergency_type, :value => @emergency.emergency_type, :readonly => true
+
+  = label :donation, :amount_donated, 'Enter Amount (PKR)'
+  = number_field :donation, :amount_donated, :value => 0
+
+  = hidden_field :donation,:user_id, :value => @user.id
+
+  = submit_tag 'Submit Pledge'

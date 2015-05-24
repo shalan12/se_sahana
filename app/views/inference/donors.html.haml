@@ -1,0 +1,5 @@
+%table
+  %tbody
+    - @donors.each do |donor|
+      %tr
+        %td= link_to donor.username, donor_emergencies_path(donor.id)

@@ -9,6 +9,8 @@ gem "cucumber-rails-training-wheels", :group => :test
 gem 'simplecov', :require => false, :group => :test
 gem 'database_cleaner'
 gem 'geocoder'
+gem 'faker'
+gem 'fabrication'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
