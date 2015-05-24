@@ -7,12 +7,12 @@ Background:
 Given I am logged in as a donor
 
 Scenario: navigating to pledge money to an emergency
-Given I am on the informationPage
-When I click on "pledge"
-Then I should be on the pledgePage
+Given I am on the details page for emergency 12
+When I press "Pledge"
+Then I should be on the pledge page for emergency 12
 
 Scenario: pledge money to an emergency
-Given I am on the pledgePage
-When I fill in amount with "123"
-And I click on "pledge"
-Then I should see "Amount 123 pledged to emergency" 
+Given I am on the pledge page for emergency 12
+When I fill in "Enter Amount (PKR)" with "123"
+And I press "Submit Pledge"
+Then I should see "Amount PKR 123 pledged to emergency 12" 

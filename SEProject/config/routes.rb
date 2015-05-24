@@ -4,7 +4,7 @@ SEProject::Application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   get    'logout'  => 'sessions#destroy'
-
+  get    'informationPage' => 'home#information'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -23,8 +23,8 @@ SEProject::Application.routes.draw do
   get 'emergency/:id/donors' => 'inference#emergency_donors', :as => :emergency_donors
   get 'donors' => 'inference#donors', :as => :donors
   get 'donors/:id' => 'inference#donor_emergencies', :as => :donor_emergencies
-  post 'pledge' => 'pledge#create_pledge' :as => :pledge_path
-  get 'pledge/:id' => 'pledge#new' 
+  post 'pledge' => 'pledge#create', :as => :pledge
+  get 'pledge/:id' => 'pledge#new', :as => :new_pledge
   # Sample resource route with options:
   #   resources :products do
   #     member do

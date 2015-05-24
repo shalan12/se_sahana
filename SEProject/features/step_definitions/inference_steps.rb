@@ -8,4 +8,8 @@ When /^I follow the user with id "([0-9]+)"$/ do |uId|
 	name = User.where('id = ?',1).first.username
 	step "I follow \"#{name}\""
 end
+Then /^I should see user with id "([0-9]+)"$/ do |uId|
+	name = User.where('id = ?',1).first.username
+	step "I should see \"#{name}\""
+end
 

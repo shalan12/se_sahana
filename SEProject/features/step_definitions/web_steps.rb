@@ -33,7 +33,7 @@ World(WithinHelpers)
 
 Given (/^I am logged in as a (.*)$/) do |type|
     step "I am on the login page"
-  User.create(:username => 'user4000', :password => 'pass4000', :user_type => '{#type}')
+  User.create(:username => 'user4000', :password => 'pass4000', :user_type => type)
   fill_in('Username', :with => 'user4000')
   fill_in('Password', :with => 'pass4000')
   click_button ('Log in')

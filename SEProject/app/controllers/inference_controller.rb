@@ -11,7 +11,7 @@ class InferenceController < ApplicationController
   end
 
   def emergency_donors
-    @donors = Emeregency.where('id = ?',params[:id]).users
+    @donors = Emergency.where('id = ?',params[:id]).first.users
     render 'donors'
   end
 
