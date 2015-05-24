@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.18'
 
-gem 'sqlite3'
+gem 'sqlite3', :group => [:development, :test] 
 gem 'cucumber-rails', :require => false
 gem 'cucumber'
 gem "cucumber-rails-training-wheels", :group => :test
@@ -24,4 +24,7 @@ group :development, :test do
   gem 'rspec-rails',      ">= 2.0.0.beta"
 end
 
-
+group :production do 
+  gem 'thin'
+  gem 'pg' 
+end
