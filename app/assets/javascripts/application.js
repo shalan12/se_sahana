@@ -12,4 +12,6 @@
 //
 //= require jquery/dist/jquery.js
 //= require bootstrap/dist/js/bootstrap.js
+//= require utils.js
+//= require map.js
 //= require_tree .

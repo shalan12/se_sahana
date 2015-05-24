@@ -1,0 +1,8 @@
+- provide(:title, "Welcome")
+.map-holder
+	%input.form-control.map-control{:name => 'map-input'}
+	.map-canvas.col-md-12
+- if current_user && current_user.user_type == 'field-worker'
+	= link_to 'Add Emergency', new_emergency_path, {:class => 'btn btn-success hero-btn' }
+- else
+	%h3.text-center You have no business here -_-

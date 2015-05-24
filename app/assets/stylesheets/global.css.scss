@@ -1,0 +1,36 @@
+html,body {
+	height: 100%;
+}
+
+$height_nav: 50px;
+$height_hero-btn: 36px;
+nav.navbar {
+	height: $height_nav;
+	overflow: hidden;
+
+	border-radius: 0;
+	margin-bottom: 0;
+
+	.navbar-right {
+		margin-right: 0;
+	}
+
+	& > .container-fluid .navbar-brand {
+		margin-left: 0;
+	}
+}
+
+.container-fluid {
+	position: relative;
+	padding: 0;
+	height: calc(100% - #{$height_nav + $height_hero-btn});
+}
+
+.btn {
+	border-radius: 0px;
+}
+
+.hero-btn {
+	width: 100%;
+	height: $height_hero-btn;
+}

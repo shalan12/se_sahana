@@ -8,3 +8,5 @@
 
 User.create(username: 'that-one-guy', password: 'meh', user_type: 'waila')
 User.create(username: 'worker', password: 'mework', user_type: 'field-worker')
+
+Emergency.create(amount_needed: 250.0, emergency_type: "Hungery Asher", lat: 31.471951999999998, long: 74.4107807, start_time: Time.now)

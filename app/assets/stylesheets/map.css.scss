@@ -1,0 +1,27 @@
+$padding-controls: 1.8em;
+$size-border-map-input: 5px;
+$color-border-map-input: #057FA3;
+
+.map-holder {
+	height: 100%;
+}
+
+.map-canvas {
+	position: relative;
+	height: 100%;
+}
+
+.map-control
+{
+	position: absolute;
+
+	margin-top: $padding-controls;
+
+	border: none;
+
+	border-left: $size-border-map-input solid $color-border-map-input;
+	padding-left: $size-border_map-input;
+
+	min-width: 400px;
+	width: 40%;
+}
