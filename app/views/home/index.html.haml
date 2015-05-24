@@ -3,7 +3,7 @@
 	%input.form-control.map-control{:name => 'map-input'}
 	.map-canvas
 .controls-holder.col-xs-4
-	= form_tag(emergencies_path, {:method => :get}) do
+	= form_tag(sort_emergencies_path, {:method => :post}) do
 		.form-group
 			= label_tag 'Options for sorting: '
 			= select_tag :sort_by, options_for_select(['Amount needed', 'Number of Emergencies']), {:class => 'form-control'}
@@ -12,5 +12,3 @@
 	= link_to 'Add Emergency', new_emergency_path, {:class => 'btn btn-success hero-btn' }
 - elsif current_user && current_user.user_type == 'NGO-worker'
 	= link_to 'View All Donors', donors_path, {:class => 'col-md-12 btn btn-success'}
-- else
-	%h3.text-center You have no business here -_-

@@ -4,7 +4,7 @@ SEProject::Application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   get    'logout'  => 'sessions#destroy'
-  get    'informationPage' => 'home#information'
+  post  '/sort' =>  'home#sort', :as => :sort_emergencies
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

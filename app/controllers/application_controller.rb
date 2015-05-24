@@ -1,6 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   include SessionsHelper
+ before_filter :set_user
+ 
+ def set_user
+    unless request.path == "/login"
+      @current_user ||= session[:current_user];
+      redirect_to '/login' unless @current_user;
+    end
+ end
 
  def location
   if params[:location].blank?

@@ -2,15 +2,6 @@ require 'date'
 class EmergenciesController < ApplicationController
 
 	def index
-		# sort = params[:sort_by]
-		# puts sort
-		# if (sort == 'Amount needed')
-		# 	flash[:notice] = 'Areas coded by amount needed'
-		# elsif (sort == 'Number of Emergencies')
-		# 	flash[:notice] = 'Areas coded by number of emergencies'
-		# end
-		# redirect_to home_path
-
 		@emergencies = Emergency.all()
 		render :json => @emergencies
 	end

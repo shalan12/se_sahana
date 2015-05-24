@@ -1,16 +1,17 @@
-%h1 Pledge Money
+.col-md-12
+	.page-header
+		%h1 Pledge Money
+		= form_tag pledge_path do
+			.form-group
+				= label :donation, :emergency_id, 'ID'
+				= text_field :donation, :emergency_id, :value => @emergency.id, :readonly => true
+			.form-group
+				= label :emergency, :emergency_type, 'Type'
+				= text_field :emergency, :emergency_type, :value => @emergency.emergency_type, :readonly => true
+			.form-group
+				= label :donation, :amount_donated, 'Enter Amount (PKR)'
+				= number_field :donation, :amount_donated, :value => 0
+			.form-group
+				= hidden_field :donation,:user_id, :value => @user.id
 
-= form_tag pledge_path do
-
-  = label :donation, :emergency_id, 'ID'
-  = text_field :donation, :emergency_id, :value => @emergency.id, :readonly => true
-
-  = label :emergency, :emergency_type, 'Type'
-  = text_field :emergency, :emergency_type, :value => @emergency.emergency_type, :readonly => true
-
-  = label :donation, :amount_donated, 'Enter Amount (PKR)'
-  = number_field :donation, :amount_donated, :value => 0
-
-  = hidden_field :donation,:user_id, :value => @user.id
-
-  = submit_tag 'Submit Pledge'
+			= submit_tag 'Submit Pledge', :class => 'btn btn-success'

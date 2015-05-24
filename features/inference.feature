@@ -17,4 +17,4 @@ Given "User1" has contributed to "Emergency1"
 And I am on the donors page
 When I follow the user with id "1"
 Then I should see "Emergency 1"
-And I should not see "Emergency 2"
+And I should not see "Emergency 22"
