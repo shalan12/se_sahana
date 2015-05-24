@@ -1,7 +1,7 @@
 <% provide(:title, "Welcome") %>
 <%= link_to 'Add Emergency', new_emergency_path, {:class => 'col-md-12 btn btn-success' }%>
 
-<%= form_tag({}, {:method => :get}) do %>
+<%= form_tag(emergencies_path, {:method => :get}) do %>
   <%= label_tag 'Options for sorting: ' %>
   <%= select_tag :sort_by, options_for_select(['Amount needed', 'Number of Emergencies']) %>
   <%= submit_tag 'Sort By' %> 

@@ -19,6 +19,8 @@
     Amount needed:
     = @emergency.amount_needed
 
+-if @user.user_type == 'NGO-worker'
+  = button_to 'See Donors', emergencies_path(@emergency)
 //= link_to 'Edit', edit_emergecny_path(@emergency)
 //= button_to 'Pledge', pledge_path
 = button_to 'Delete', emergencies_path(@emergency), :method => :delete, :confirm => 'Are you sure?'
