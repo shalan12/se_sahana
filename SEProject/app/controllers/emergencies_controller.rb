@@ -17,4 +17,9 @@ class EmergenciesController < ApplicationController
 		#@emergency = Emergency.find(id)
 	end
 
+	def pledge
+		@emergency = Emergency.find(params[:id]);
+		@user = session[:current_user];
+	end
+
 end

@@ -23,6 +23,8 @@ SEProject::Application.routes.draw do
   get 'emergency/:id/donors' => 'inference#emergency_donors', :as => :emergency_donors
   get 'donors' => 'inference#donors', :as => :donors
   get 'donors/:id' => 'inference#donor_emergencies', :as => :donor_emergencies
+  post 'pledge' => 'pledge#create_pledge' :as => :pledge_path
+  get 'pledge/:id' => 'pledge#new' 
   # Sample resource route with options:
   #   resources :products do
   #     member do
