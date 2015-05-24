@@ -19,6 +19,15 @@ module NavigationHelpers
       '/login'
     when /^the new_emergency\s?page$/
       '/emergencies/new'
+    when /^the donors\s?page$/
+      '/donors'
+    when /^the Emergency([0-9]+)\s?page$/
+      emergency_path(Emergency.find($1))
+    when /^the details page for emergency ([0-9]+)$/
+      emergency_path(Emergency.find($1))
+    when /^the pledge page for emergency ([0-9]+)$/
+      new_pledge_path(Emergency.find($1))
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

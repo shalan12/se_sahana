@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
   def authenticate(pass)
   	password == pass
   end
+
+  def self.getUsersByType(type)
+  	User.where('user_type = ?', type)
+  end
 end
